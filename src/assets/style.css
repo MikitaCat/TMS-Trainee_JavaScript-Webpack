@@ -1,0 +1,198 @@
+*{
+    box-sizing: border-box;
+}
+.wraper{
+    max-width: 1200px;
+    height: 580px;
+    background: rgb(248, 248, 248);
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+
+@media(max-width:600px){
+    .wraper{
+        flex-direction: column;
+    }
+
+    .tasks{
+        flex-direction: column;
+        min-width: 100%;;
+    }
+
+    .high-priority, .mid-priority, .low-priority{
+        min-width: 100%;
+    }
+    
+    .menu{
+        min-width: 100%;
+        max-height: 30%;
+    }
+
+    .show-high-tasks, .show-mid-tasks, .show-low-tasks{
+        max-height: 40%;
+    }
+
+    h3{
+        font-size: small;
+    }
+}
+
+.menu{
+    background-color: rgb(142, 185, 248);
+    width: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    position: relative;
+    height: 10%;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.menu.active {
+    height: 80%;
+}
+
+.menu input[type='text'], .high-task-btn, .mid-task-btn, .low-task-btn, .right-name, .incorrect-name {
+    display: none;
+}
+
+.menu.menu.active .incorrect-name{
+    font-size: 12px;
+    display: inline-block;
+    color: red;
+    margin-top: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+.menu.active input[type='text'] {
+    display: inline-block;
+    height: 30px;
+    outline: none;
+}
+
+
+.menu.active button {
+    border: none;
+    display: inline-block;
+    margin: 5px;
+    height: 50px;
+    outline: none;
+    background: rgb(248, 246, 246);
+    
+}
+
+.menu.active button:hover{
+    background: rgb(211, 209, 209);
+    transition: 0.3s;
+    
+}
+
+
+
+.arrow {
+    width: 20%;
+    /* position: relative; */
+    margin-left: 38%;
+    z-index: 3;
+    transition: 0.5s;
+}
+
+.menu.active .arrow {
+    margin: 192px -131px 0px 86px;
+    transition: 0.5s;
+    transform: rotateX(180deg);
+}
+
+h3 {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.show-high-tasks{
+    border: solid 1px;
+    height: 11%;
+    background: rgb(206, 248, 182);
+}
+
+.show-high-tasks:hover{
+    background: rgb(187, 245, 153);
+}
+
+.show-mid-tasks{
+    border: solid 1px;
+    height: 11%;
+    background: rgb(215, 250, 204);
+}
+
+.show-mid-tasks:hover{
+    background: #cff8c2;
+}
+
+.show-low-tasks{
+    border: solid 1px;
+    height: 11%;
+    background: rgb(234, 248, 230);
+}
+
+.show-low-tasks:hover{
+    background: rgb(225, 250, 218);
+}
+
+.high-priority, .mid-priority, .low-priority {
+    width: 32.5%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    font-size: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+li {
+    margin-bottom: 4%;
+}
+
+.deleteBtn {
+    color: white;
+    width: 16px;
+    position: relative;
+    height: 17px;
+    margin-left: 10px;
+    background-color: rgb(235, 96, 96);
+    border: none;
+    border-radius: 50%;
+    padding-left: 2.9px;
+    padding-top: 0px;
+}
+
+.deleteBtn:hover{
+    background-color: rgb(233, 56, 56);
+    transition: 2ms;
+}
+
+.deleteBtn:focus{
+    outline: none;
+}
+
+hr {
+    position: relative;
+    right: 5%;
+}
+
+
+    
